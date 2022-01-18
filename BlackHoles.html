@@ -16,53 +16,25 @@
     <link rel="stylesheet" " href="BlackHoles.css" />
 
     <title>Black Holes</title>
-    <link rel="icon" href="favicon.svg"/>
+    <link rel="icon" href="https://raw.githubusercontent.com/MiSalocin/HTMLSandBox/main/favicon.svg"/>
 </head>
 <body>
-    <div class="sidebar">
-        
-        <a href="sandbox.svg"><img src="sandbox.svg" alt="My Sandbox" title="Welcome to my sandbox" id="icon"></a>
-        <h2 id="glossary">Glossary</h2>
-        <ol>
-            <li><a href="#discovery"> Discovery</a></li>
-        
-            <li><a href="#formation">Formation</a></li>
-        
-            <li><a href="#life">Life</a></li>
-            
-            <li><a href="#photo">Photo</a></li>
-
-            <li><a href="#random">Random Stuff</a></li>
-        </ol>
-        <nav id="menu">
-            <h2>See also</h2>
-            <ul>
-                <li>
-                    <a href="Index.html">Curriculum</a>
-                </li>
-                <li>
-                    <a href="BlackHoles.html">Black Holes</a>
-                </li>
-                <li>
-                    <a href="Calculator/Calculator.html">Calculator</a>
-                </li>
-            </ul>
-        </nav>
-        <address>
-            <dl>
-                <dt>Name</dt>
-                <dl>Nicolas Correa</dl>
-                <dt>Gmail</dt>
-                <dl><a href="mailto:nicolasdeoc@gmail.com">nicolasdeoc</a></dl>
-                <dt>Location</dt>
-                <dl>Brazil, RS</dl>
-            </dl>
-        </address>
+    <div id="title">
+        <h1  style="
+        font-size: min(4.5vw, 40px);">Black Holes</h1>
     </div>
     
-    <div class="title">
-        <h1>Black Holes</h1>
-    </div>
+    <nav class="menu">
+        <p id="here">
+            Black Holes
+        </p>
+        <p>
+            <a href="Index.html">Curriculum</a>
+        </p>
+        <p>
+            <a href="Calculator/Calculator.html">Calculator</a>
+        </p>
+    </nav>
 
     <div class="content">
         <div class="discovery">
@@ -105,8 +77,12 @@
         
         <div class="photo">
             <h2 id="photo">The Photo</h2>
-            <p>Click for the photo <br/></p>
-            <a href="https://upload.wikimedia.org/wikipedia/commons/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg" title="See it in max res"><img src="https://source.unsplash.com/random" alt="A black hole image" width="250px"></a>
+            <a href="https://upload.wikimedia.org/wikipedia/commons/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg" title="See the image" target="_blank">
+                <figure>
+                    <img src="https://source.unsplash.com/random" alt="A black hole image" >
+                    <figcaption>A random image, click to see a black hole image</figcaption>
+                </figure>
+            </a>
         </div>
 
         <div class="random">
@@ -150,8 +126,43 @@
                     </tr>
                 </tbody>
             </table>
+            <p>Who doesn't like rock and roll? This is a song from a south brazilian artist called Humberto Gessinger.</p>
+            <iframe
+                id="song"
+                height="315"
+                src="https://www.youtube.com/embed/ZNR4gzzPiuk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </div>
 
+    <div class="sidebar">
+        
+        <a href="https://raw.githubusercontent.com/MiSalocin/HTMLSandBox/main/SandBox.svg"><img src="https://raw.githubusercontent.com/MiSalocin/HTMLSandBox/main/SandBox.svg" alt="My Sandbox" title="Welcome to my sandbox" id="icon"></a>
+        <h2 id="glossary">Glossary</h2>
+        <ol>
+            <li><a href="#discovery"> Discovery</a></li>
+        
+            <li><a href="#formation">Formation</a></li>
+        
+            <li><a href="#life">Life</a></li>
+            
+            <li><a href="#photo">Photo</a></li>
+
+            <li><a href="#random">Random Stuff</a></li>
+        </ol>
+        <address>
+            <dl>
+                <dt>Name</dt>
+                <dl>Nicolas Correa</dl>
+                <dt>Gmail</dt>
+                <dl><a href="mailto:nicolasdeoc@gmail.com">nicolasdeoc</a></dl>
+                <dt>Location</dt>
+                <dl>Brazil, RS</dl>
+            </dl>
+        </address>
+    </div>
 </body>
 </html>
