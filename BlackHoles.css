@@ -7,11 +7,11 @@ body {
     border: 0;
     padding: 0;
     margin: 0;
-    background-image: url(galaxy.jpg) ;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d7/Carina_Dwarf_Galaxy.jpg) ;
     background-size: cover;
     background-attachment: fixed;
     color: Black;
-    font-family: sans-serif;
+    font-family: "times new roman", sans-serif;
 }
 
 a {
@@ -26,7 +26,7 @@ h2 {
 }
 
 table {
-    width: min(calc(100vw - 239px - 3vw), 579px);
+    width: min(calc(100vw - min(calc(20vw + 40px), 190px) - 63px), 579px);
     align-self: center;
     text-align: center;
     line-height: 25px;
@@ -43,12 +43,16 @@ table caption {
 address {
     width: 180px;
     position: absolute;
-    bottom: 0px;
+    bottom: min(2.5%, 20px);
 }
 
 dt {
     float: left;
     font-weight: bold;
+}
+
+dl {
+    margin: 0;
 }
 
 dt::after {
@@ -59,20 +63,22 @@ dd {
     padding: 0 0 0.5em 0;
 }
 
+#song {
+    width: min(calc(100vw - min(calc(20vw + 40px), 190px) - 63px), 579px);
+    height: min(calc(100vw - min(calc(20vw + 40px), 190px) - 63px) * 0.5625, 326px);
+}
+
 #icon {
     width: min(20vw, 150px);
 }
 
-#song {
-    width: min(calc(100vw - 239px - 3vw), 579px);
-    height: min(calc(100vw - 239px - 3vw) * 0.5625, 325px);
-}
-
 #here {
+    cursor: default;
     background: #ddd;
 }
 
 #title {
+    font-family: Sans-serif;
     line-height: 50px;
     border: 0;
     margin: -2px 3% 30px min(calc(20vw + 40px), 190px);
@@ -81,21 +87,27 @@ dd {
 }
 
 .menu {
+    font-family: Sans-serif;
     box-sizing: border-box;
     display: flex;
     justify-content: left;
-    padding: 0px 190px;
+    padding: 0 0 0 min(calc(20vw + 40px), 190px);
 }
 
+.menu .change {
+    border-right: 0px;
+  }
+
 .menu p {
+    cursor: pointer;
+    transition: 0.4s;
     vertical-align: left;
     margin: 0 0 0 min(calc(20vw + 40px), 190px);
     padding: 1px 10px;
     margin: 0;
     background: #fff;
     border: 2px solid rgb(167, 215, 249);
-    border-bottom: 2px solid white;
-    font-weight: 1000;
+    border-bottom: 0px;
 }
 
 .menu p:hover {
@@ -103,9 +115,9 @@ dd {
 }
 
 .sidebar {
-    background: linear-gradient(270deg, #0000, #000, #000f);
+    font-family: Sans-serif;
+    background: linear-gradient(to left, #0000, #000f 66%);
     color: white;
-    overflow: hidden;
     top: 0;
     bottom: 0;
     padding: min(2.5%, 20px) 0px 0px min(2.5%, 20px);
@@ -114,7 +126,7 @@ dd {
 }
 
 .sidebar ol {
-    padding: 0px 0px 0px min(20%, 160px);
+    padding: 0px 0px 0px min(20%, 170px);
 }
 
 .sidebar h2 {
@@ -136,18 +148,12 @@ dd {
 }
 
 .content {
-    margin: -2px 3% 30px min(calc(20vw + 40px), 190px);
+    margin: -2px 13px 30px min(calc(20vw + 40px), 190px);
     border: 2px solid rgb(167, 215, 249);
     padding: 0px 15px 20px 15px;
     background-color: white;
 }
 
-.photo {
-    box-sizing: border-box;
-    width: min(calc(100vw - 279px - 3vw), 425px);
-}
-
 .photo img {
-    width: min(calc(100vw - 279px - 3vw), 425px);
+    width: min(calc(100vw - min(calc(20vw + 40px), 190px) - 104px), 579px);
 }
-
