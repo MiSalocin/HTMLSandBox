@@ -1,31 +1,76 @@
+/* Light mode */
+:root {
+    --svg: invert();
+    --bg-img: url(images/LBG.png);
+    --a-color: #1a24b9;
+    --a-visited-color: #660099;
+    --h2-color: rgb(0, 126, 190);
+    --hover-color: #eee;
+    --inactive-bg: #ddd;
+    --border-color: #99f;
+    --body-bg: #FFFe;
+    --body-color: #000;
+}
+
+ /* Dark mode */
+ @media (prefers-color-scheme: dark) {
+    :root {
+        --svg: none;
+        --bg-img: url(images/DBG.png);
+        --a-color: #6997f4;
+        --a-visited-color: #9656ff;
+        --h2-color: rgb(0, 255, 255);
+        --inactive-bg: #383a3b;
+        --border-color: #9656f8;
+        --body-bg: #181a1b;
+        --body-color: #FFF;
+    }
+ }
+
 *{
     box-sizing: border-box;
     font-size: min(2vw, 16px);
 }
 
 body {
+    color: var(--body-color);
     border: 0;
     padding: 0;
     margin: 0;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d7/Carina_Dwarf_Galaxy.jpg) ;
+    background-image: var(--bg-img);
     background-size: cover;
     background-attachment: fixed;
-    color: Black;
-    font-family: "times new roman", sans-serif;
+    background-position: top right;
+    color: body-color;
+    font-family: sans-serif;
 }
 
 a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+a:link {
+    color: var(--a-color);
+}
+
+a:visited{
+    color: var(--a-visited-color);
+}
+
+
 h2 {
     font-size: 2.5em;
-    color: indigo;
+    color: var(--h2-color);
     font-weight: bold;
     margin: 1em 0 0 0;
 }
 
 table {
+    border: 1px solid #0000;
     width: min(calc(100vw - min(calc(20vw + 40px), 190px) - 63px), 579px);
     align-self: center;
     text-align: center;
@@ -35,7 +80,7 @@ table {
 }
 
 table caption {
-    color: black;
+    color: var(--body-color);
     text-align: left;
     margin-bottom: 10px;
 }
@@ -70,11 +115,13 @@ dd {
 
 #icon {
     width: min(20vw, 150px);
+    filter: var(--svg);
 }
 
 #here {
     cursor: default;
-    background: #ddd;
+    color: var(--body-color);
+    background: var(--inactive-bg);
 }
 
 #title {
@@ -94,30 +141,29 @@ dd {
     padding: 0 0 0 min(calc(20vw + 40px), 190px);
 }
 
-.menu .change {
-    border-right: 0px;
-  }
-
 .menu p {
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.2s;
     vertical-align: left;
     margin: 0 0 0 min(calc(20vw + 40px), 190px);
     padding: 1px 10px;
     margin: 0;
-    background: #fff;
-    border: 2px solid rgb(167, 215, 249);
+    background-color: var(--body-bg);
+    border: 2px solid var(--border-color);
     border-bottom: 0px;
 }
 
 .menu p:hover {
-    background: #eee;
+    background: var(--hover-color);
+}
+
+.menu .change {
+    border-right: 0px;
 }
 
 .sidebar {
     font-family: Sans-serif;
-    background: linear-gradient(to left, #0000, #000f 66%);
-    color: white;
+    background: linear-gradient(to left, #0000, var(--body-bg) 100%);
     top: 0;
     bottom: 0;
     padding: min(2.5%, 20px) 0px 0px min(2.5%, 20px);
@@ -130,28 +176,16 @@ dd {
 }
 
 .sidebar h2 {
-    color: rgb(233, 233, 233);
+    color: var(--body-color);
     font-size: 1.5em;
     line-height: 10px;
 }
 
-.sidebar a:link {
-    color: lightskyblue;
-}
-
-.sidebar a:visited{
-    color: violet;
-}
-
-.sidebar a:hover {
-    color: lightsteelblue;
-}
-
 .content {
+    background-color: var(--body-bg);
     margin: -2px 13px 30px min(calc(20vw + 40px), 190px);
-    border: 2px solid rgb(167, 215, 249);
+    border: 2px solid var(--border-color);
     padding: 0px 15px 20px 15px;
-    background-color: white;
 }
 
 .photo img {
