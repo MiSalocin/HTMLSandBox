@@ -1,14 +1,54 @@
+/* Light mode */
+:root {
+    --a-color: #1a24b9;
+    --a-visited-color: #660099;
+    --h2-color: rgb(0, 126, 190);
+    --hover-color: #eee;
+    --inactive-bg: #ddd;
+    --border-color: #99f;
+    --body-bg: #FFFe;
+    --body-color: #000;
+}
+
+ /* Dark mode */
+ @media (prefers-color-scheme: dark) {
+    :root {
+        --a-color: #6997f4;
+        --a-visited-color: #9656ff;
+        --h2-color: rgb(0, 255, 255);
+        --inactive-bg: #383a3b;
+        --border-color: #9656f8;
+        --body-bg: #181a1b;
+        --body-color: #FFF;
+    }
+ }
+
+
 * {
     box-sizing: border-box;
     font: 16px 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
+    color: var(--body-color);
+    background: var(--body-bg);
     margin: 0;
 }
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:link {
+    color: var(--a-color);
+}
+
+a:visited{
+    color: var(--a-visited-color);
 }
 
 h1 {
@@ -20,32 +60,44 @@ h1 {
 }
 
 h2 {
+    border-bottom: 1px dotted black;
     font-size: 2em;
     font-weight: bolder;
     color: #05e;
 }
 
-iframe {
-    border: 0px;
-    width: 50%;
-    height: 10em;
-    clear: right;
-    float: right;
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1;
 }
 
 nav ul {
+    max-width: 1000px;
     list-style: none;
     display: flex;
-    margin: 0 0 0 0;
+    margin: 0 auto 0 auto;
     padding: 0;
 }
+
 nav ul li {
     border: 1px solid #ccc;
     padding: 5px 10px;
 }
 
+dd {
+    margin: 10px 0;
+    border-bottom: 1px dotted #CCC;
+}
+
+dt {
+    float: left;
+    font-weight: bold;
+    margin: 0 10px 0 0; 
+}
+
 dt::after {
-    
+    content: ":";
 }
 
 #header {
@@ -55,6 +107,15 @@ dt::after {
 #content {
     max-width: 1000px;
     padding: 0 20px;
-    margin: -1px auto 0 auto;
+    margin: -1px auto 20px auto;
     border: 1px solid #ccc;
+}
+
+#abilities ul{
+    list-style: none;
+    padding-left: 1em;
+}
+
+#abilities li::before{
+    content: "- ";
 }
