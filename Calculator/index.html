@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <nav>
+    <ul>
+      <li>
+        <a href="../Index.html">Curriculum</a>
+      </li>
+      <li>
+        <a href="../BlackHoles.html">Black Holes</a>
+      </li>
+      <li>
+        <a href="Calculator.html">Calculator</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div>
+    <main>
+      <h1></h1>
+      <table>
+        <tr>
+          <td colspan="4"">
+            <p id="answer"></p>
+          </td>
+        </tr>
+        <tr>
+          <td><button onclick="addChar('&#40;')" class="oper">&#40;</button></td>
+          <td><button onclick="addChar('&#41;')" class="oper">&#41;</button></td>
+          <td><button onclick="addChar('Clear')" class="oper">AC</button></td>
+          <td><button onclick="addChar('Backspace')" class="oper">⌫</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="addChar('7')" class="num">7</button></td>
+          <td><button onclick="addChar('8')" class="num">8</button></td>
+          <td><button onclick="addChar('9')" class="num">9</button></td>
+          <td><button onclick="addChar('/')" class="oper">/</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="addChar('4')" class="num">4</button></td>
+          <td><button onclick="addChar('5')" class="num">5</button></td>
+          <td><button onclick="addChar('6')" class="num">6</button></td>
+          <td><button onclick="addChar('*')" class="oper">x</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="addChar('1')" class="num">1</button></td>
+          <td><button onclick="addChar('2')" class="num">2</button></td>
+          <td><button onclick="addChar('3')" class="num">3</button></td>
+          <td><button onclick="addChar('-')" class="oper">-</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="addChar('0')" class="num">0</button></td>
+          <td><button onclick="addChar('.')" class="num">.</button></td>
+          <td><button onclick="addChar('Enter')" class="oper" id="result">=</button></td>
+          <td><button onclick="addChar('+')" class="oper">+</button></td>
+        </tr>
+      </table>
+    </main>
+    <aside>
+      <h1>History</h1>
+      <div class="result">
+        <h2></h2>
+        <p></p>
+      </div>
+    </aside>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

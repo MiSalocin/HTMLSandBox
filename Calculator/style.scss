@@ -1,0 +1,69 @@
+$border: rgb(110, 110, 110);
+$operBg: #dadce0;
+$numBg: #f1f3f4;
+ 
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  font-size: 20px;
+  width: 400px;
+  border-spacing: 0;
+
+  td {
+    padding: 3px;
+    width: 25%;
+  }
+
+  button, p {
+    border: 0;
+    font-size: 1em;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    word-break: keep-all;
+    align-content: center;
+    font-size: 1.2em;
+    border: 1px solid rgb(196, 196, 196);
+    margin: 0;
+  }
+
+  .num {
+    background-color: $numBg;
+
+    &:active{
+      background-color: rgb(218, 218, 218);
+    }
+  }
+
+  .oper {
+    background-color: $operBg;
+
+    &:active{
+      background-color: rgb(160, 160, 160);
+    }
+  }
+
+  #result {
+    background-color: #4285f4;
+
+    &:active{
+      background-color: #006eff;
+    }
+  }
+}
