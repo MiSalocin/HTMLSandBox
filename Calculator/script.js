@@ -1,9 +1,10 @@
-let calculate = []
-let memory = []
-let valid = false
-const operations = ["/","*","+"]
 const answers = document.querySelector("#answer")
 const body = document.querySelector("body")
+const operations = ["/","*","+"]
+let calculate = []
+let memory = []
+let depth = 0
+let valid = false
 
 // Handles with the buttons displayed on screen
 function addChar(char) {
@@ -26,7 +27,7 @@ body.addEventListener("paste", (event) => {
 
 // Verify and add the received character to the array
 function inputHandler(key) {
-
+  const lastInput = calculate[calculate.length-1]
   // Corrects the string if it has line breaks
   key = key.replace(/(\r\n|\n|\r)/gm, "")
 
@@ -38,16 +39,15 @@ function inputHandler(key) {
   // Deals with numbers
   else if(Number(key) || key == "0") {
     if (valid){
-      calculate.pop()
+      inputHandler("Clear")
       valid = false
     }
-    
     calculate.push(key)
   }
 
   // Deals with the minus key
-  else if (key === "-" && calculate[calculate.length - 1] != "-") {
-    if (calculate[calculate.length - 1] == "+") {
+  else if (key === "-" && lastInput != "-") {
+    if (lastInput == "+") {
       calculate.pop()
     }
     calculate.push(key)
@@ -55,22 +55,39 @@ function inputHandler(key) {
 
   // Deals with the operations
   else if (operations.includes(key)
-  && calculate.length > 0
-  && calculate[calculate.length - 1] != "-"){
-    if (operations.includes(calculate[calculate.length - 1])){
-      calculate[calculate.length - 1] = key
+  && calculate.length>0&&lastInput!="-"){
+    if(operations.includes(lastInput)){
+      calculate[calculate.length-1] = key
     }
     else calculate.push(key)
   }
 
   // Deals with parenthesis
-  else if (key == "(" || key == ")") {
+  else if (key == "(") {
+    depth++ 
+    calculate.push(key)
+  }
 
+  // Deals with parenthesis
+  else if (key == ")") {
+    if (depth > 0 && Number(lastInput) ){
+      calculate.push(key)
+      depth-=1
+    }
   }
 
   // Deals with decimal points
   else if (key == "."){
-
+    for (let i = calculate.length - 1; i >= 0; i -= 1) {
+      if (operations.includes(calculate[i]) || calculate[i] == "-" || i == 0) {
+        calculate.push(key)
+        break
+      } else if (calculate[i] == ".") {
+        break
+      }
+    }
+    if (calculate.length == 0) 
+      calculate.push(key)
   }
   
   valid = false
@@ -104,6 +121,11 @@ function result() {
 
   let numbers = []
   let actions = []
+
+  
+  for (let number in calculate) {
+        
+  }
 
   let numberID = 0
   calculate.forEach((element) => {
@@ -154,7 +176,8 @@ function result() {
     }
   }
 
-
-  inputHandler("Clear")
-  calculate.push(String(numbers[0]))
+  memory.push(calculate.join(''))
+  console.log(memory)
+  calculate = String((numbers[0])).split("")
+  valid = true
 }

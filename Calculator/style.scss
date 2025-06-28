@@ -1,10 +1,19 @@
-$border: rgb(110, 110, 110);
-$operBg: #dadce0;
-$numBg: #f1f3f4;
+$border: rgba(110, 110, 110, 0);
+$opBg: #cccccc;
+$opHoverBg: #aaaaaa;
+$numBg: #eeeeee;
+$numHoverBg: #dddddd;
+
  
 * {
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+html {
+  background-color: white;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -13,57 +22,95 @@ body {
   margin: 0;
 }
 
-table {
-  font-size: 20px;
-  width: 400px;
-  border-spacing: 0;
-
-  td {
-    padding: 3px;
-    width: 25%;
-  }
-
-  button, p {
-    border: 0;
-    font-size: 1em;
-    height: 50px;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  table {
+    border: 1px solid rgb(218, 218, 218);
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    max-width: 400px;
     width: 100%;
-    border-radius: 10px;
-    
-  }
+    border-spacing: 0;
 
-  p {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    word-break: keep-all;
-    align-content: center;
-    font-size: 1.2em;
-    border: 1px solid rgb(196, 196, 196);
-    margin: 0;
-  }
-
-  .num {
-    background-color: $numBg;
-
-    &:active{
-      background-color: rgb(218, 218, 218);
+    td {
+      padding: 3px;
+      width: 25%;
     }
-  }
 
-  .oper {
-    background-color: $operBg;
+    button, p {
+      
+      border: 0;
+      font-size: 1em;
+      height: 50px;
+      width: 100%;
+      transition: background-color .5s, box-shadow .5s, border .5s;
 
-    &:active{
-      background-color: rgb(160, 160, 160);
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+      }
+      
     }
-  }
 
-  #result {
-    background-color: #4285f4;
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      word-break: keep-all;
+      align-content: center;
+      font-size: 1.2em;
+      border: 1px solid rgb(196, 196, 196);
+      margin: 0;
+    }
 
-    &:active{
-      background-color: #006eff;
+    .num {
+      background-color: $numBg;
+      border: 1px solid #e4e4e4;
+
+      &:hover {
+        background-color: $numHoverBg;
+        border: 1px solid #b6b6b6;
+      }
+
+      &:active{
+        background-color: rgb(218, 218, 218);
+      }
+    }
+
+    .op {
+      background-color: $opBg;
+
+      &:hover {
+        background-color: $opHoverBg;
+      }
+
+      &:active{
+        background-color: rgb(160, 160, 160);
+      }
+    }
+
+    #result {
+      background-color: #4285f4;
+
+      &:hover {
+        background-color: #1f70f3;
+      }
+
+      &:active{
+        background-color: #006eff;
+      }
+    }
+
+    #answer {
+      max-width: 100%;
+      background-color: $numBg;
+      border: 1px solid rgb(219, 219, 219);
+      overflow-x: auto;
     }
   }
 }
